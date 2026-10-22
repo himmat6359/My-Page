@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Himmat Prajapati – Web Developer (PHP/Laravel) and Software Support & QA Engineer based in Ahmedabad.">
 <meta name="theme-color" content="#0b1020">
-<title>Himmat Prajapati</title>
+<title>Himmat Prajapati | Web Developer & QA Engineer</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
@@ -561,8 +561,9 @@ footer{padding:34px 0;border-top:1px solid var(--line);text-align:center;color:v
         <input id="email" name="email" type="email" placeholder="you@example.com" required>
         <label for="message">Message</label>
         <textarea id="message" name="message" placeholder="Write your message..." required></textarea>
-        <button class="btn btn-primary" type="submit">Send via email app →</button>
-        <p class="form-note" id="formNote" aria-live="polite">This opens your email app with the message pre-filled. Nothing is stored.</p>
+        <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+        <button class="btn btn-primary" type="submit" id="sendBtn">Send message →</button>
+        <p class="form-note" id="formNote" aria-live="polite">Your message is sent directly to my inbox.</p>
       </form>
     </div>
   </div>
@@ -642,15 +643,44 @@ sections.forEach(s => spy.observe(s));
 document.getElementById("year").textContent = new Date().getFullYear();
 
 // Contact form -> mailto
-document.getElementById("contactForm").addEventListener("submit", (ev) => {
+document.getElementById("contactForm").addEventListener("submit", async (ev) => {
   ev.preventDefault();
+  const form = ev.target;
+  const btn = document.getElementById("sendBtn");
+  const note = document.getElementById("formNote");
   const name = document.getElementById("name").value.trim();
-  const email = document.getElementById("email").value.trim();
-  const message = document.getElementById("message").value.trim();
-  const subject = encodeURIComponent("Portfolio enquiry from " + name);
-  const body = encodeURIComponent("Name: " + name + "\nEmail: " + email + "\n\nMessage:\n" + message);
-  document.getElementById("formNote").textContent = "Opening your email application...";
-  window.location.href = "mailto:himmatjprajapati@gmail.com?subject=" + subject + "&body=" + body;
+
+  btn.disabled = true;
+  btn.textContent = "Sending...";
+  note.textContent = "";
+
+  try {
+    const res = await fetch("https://formsubmit.co/ajax/himmatjprajapati@gmail.com", {
+      method: "POST",
+      headers: { "Content-Type": "application/json", "Accept": "application/json" },
+      body: JSON.stringify({
+        name: name,
+        email: document.getElementById("email").value.trim(),
+        message: document.getElementById("message").value.trim(),
+        _subject: "Portfolio enquiry from " + name,
+        _template: "table",
+        _captcha: "false",
+        _honey: form.elements["_honey"].value
+      })
+    });
+    const data = await res.json();
+    if (res.ok && String(data.success) !== "false") {
+      form.reset();
+      note.textContent = "✅ Thank you! Your message has been sent.";
+    } else {
+      throw new Error(data.message || "Failed");
+    }
+  } catch (err) {
+    note.textContent = "❌ Could not send. Please email me at himmatjprajapati@gmail.com.";
+  } finally {
+    btn.disabled = false;
+    btn.textContent = "Send message →";
+  }
 });
 </script>
 </body>
