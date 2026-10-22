@@ -676,7 +676,11 @@ document.getElementById("contactForm").addEventListener("submit", async (ev) => 
       throw new Error(data.message || "Failed");
     }
   } catch (err) {
-    note.textContent = "❌ Could not send. Please email me at himmatjprajapati@gmail.com.";
+    console.error("Contact form error:", err);
+    const reason = location.protocol === "file:"
+      ? "Form works only on a live website, not from a local file."
+      : (err && err.message ? err.message : "Unknown error");
+    note.textContent = "❌ Could not send (" + reason + "). Please email me at himmatjprajapati@gmail.com.";
   } finally {
     btn.disabled = false;
     btn.textContent = "Send message →";
