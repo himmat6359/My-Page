@@ -1,0 +1,704 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Himmat Prajapati - Web Developer and QA Engineer Portfolio">
+  <title>Himmat Prajapati | Web Developer & QA Engineer</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      color: #172033;
+      background: #ffffff;
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      background: white;
+      border-bottom: 1px solid #e5e7eb;
+      z-index: 10;
+    }
+
+    nav {
+      min-height: 75px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .logo {
+      font-size: 21px;
+      font-weight: bold;
+      color: #2563eb;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 24px;
+      list-style: none;
+    }
+
+    .nav-links a:hover {
+      color: #2563eb;
+    }
+
+    .menu-toggle {
+      display: none;
+      border: 1px solid #ddd;
+      background: white;
+      padding: 8px 12px;
+      border-radius: 6px;
+      font-size: 20px;
+      cursor: pointer;
+    }
+
+    .hero {
+      background: linear-gradient(135deg, #f8fbff, #edf3ff);
+      padding: 100px 0;
+    }
+
+    .hero-content {
+      display: grid;
+      grid-template-columns: 1.3fr 0.7fr;
+      gap: 50px;
+      align-items: center;
+    }
+
+    .tag {
+      display: inline-block;
+      background: #dbeafe;
+      color: #1d4ed8;
+      padding: 6px 12px;
+      border-radius: 20px;
+      font-size: 13px;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      font-size: clamp(36px, 5vw, 55px);
+      line-height: 1.2;
+      margin-bottom: 18px;
+    }
+
+    .blue {
+      color: #2563eb;
+    }
+
+    .hero p {
+      color: #64748b;
+      max-width: 550px;
+      margin-bottom: 25px;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 20px;
+      background: #2563eb;
+      color: white;
+      border-radius: 8px;
+      border: 1px solid #2563eb;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      background: #1d4ed8;
+    }
+
+    .btn-outline {
+      background: white;
+      color: #172033;
+      border-color: #d1d5db;
+    }
+
+    .profile-card {
+      min-height: 300px;
+      background: white;
+      border: 1px solid #e5e7eb;
+      border-radius: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 15px 40px #1720330d;
+    }
+
+    .profile-initials {
+      width: 170px;
+      height: 170px;
+      display: grid;
+      place-items: center;
+      background: #eaf1ff;
+      color: #2563eb;
+      border-radius: 50%;
+      font-size: 55px;
+      font-weight: bold;
+    }
+
+    section {
+      padding: 80px 0;
+    }
+
+    .section-heading {
+      font-size: 34px;
+      margin-bottom: 12px;
+    }
+
+    .section-intro {
+      color: #64748b;
+      margin-bottom: 30px;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 45px;
+    }
+
+    .about-text p {
+      color: #64748b;
+      margin-bottom: 15px;
+    }
+
+    .info-card {
+      padding: 25px;
+      border: 1px solid #e5e7eb;
+      border-radius: 15px;
+      background: #fff;
+    }
+
+    .info-card p {
+      margin-bottom: 12px;
+      overflow-wrap: anywhere;
+    }
+
+    .soft-section {
+      background: #f8fafc;
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .skill {
+      padding: 22px;
+      background: white;
+      border: 1px solid #e5e7eb;
+      border-radius: 12px;
+    }
+
+    .skill h3 {
+      margin-bottom: 8px;
+      font-size: 17px;
+    }
+
+    .skill p {
+      color: #64748b;
+      font-size: 14px;
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .project {
+      border: 1px solid #e5e7eb;
+      border-radius: 15px;
+      overflow: hidden;
+      background: white;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .project:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 30px #17203312;
+    }
+
+    .project-banner {
+      min-height: 130px;
+      display: grid;
+      place-items: center;
+      background: #eaf1ff;
+      color: #2563eb;
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    .project-body {
+      padding: 22px;
+    }
+
+    .project-body p {
+      color: #64748b;
+      font-size: 14px;
+      margin: 12px 0;
+    }
+
+    .project-link {
+      display: inline-block;
+      color: #2563eb;
+      font-weight: bold;
+      font-size: 14px;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 45px;
+    }
+
+    .contact-details p {
+      margin: 15px 0;
+      overflow-wrap: anywhere;
+    }
+
+    .contact-form {
+      padding: 25px;
+      border: 1px solid #e5e7eb;
+      border-radius: 15px;
+      background: white;
+    }
+
+    .contact-form label {
+      display: block;
+      margin: 12px 0 6px;
+      font-weight: bold;
+      font-size: 14px;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #d1d5db;
+      border-radius: 7px;
+      font: inherit;
+    }
+
+    .contact-form textarea {
+      resize: vertical;
+    }
+
+    .contact-form button {
+      width: 100%;
+      margin-top: 18px;
+    }
+
+    .form-note {
+      margin-top: 12px;
+      color: #64748b;
+      font-size: 12px;
+    }
+
+    footer {
+      padding: 25px 0;
+      text-align: center;
+      border-top: 1px solid #e5e7eb;
+      color: #64748b;
+      font-size: 13px;
+    }
+
+    @media (max-width: 800px) {
+      .hero-content,
+      .about-grid,
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .skills-grid,
+      .projects-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .hero {
+        padding: 65px 0;
+      }
+
+      .profile-card {
+        min-height: 220px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      nav {
+        flex-wrap: wrap;
+        padding: 14px 0;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+
+      .nav-links {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        gap: 0;
+      }
+
+      .nav-links.open {
+        display: flex;
+      }
+
+      .nav-links a {
+        display: block;
+        padding: 10px 0;
+      }
+
+      .skills-grid,
+      .projects-grid {
+        grid-template-columns: 1fr;
+      }
+
+      section {
+        padding: 60px 0;
+      }
+
+      .section-heading {
+        font-size: 29px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <nav class="container">
+      <a class="logo" href="#home">HP.</a>
+
+      <button class="menu-toggle" id="menuToggle"
+        aria-label="Toggle navigation" aria-expanded="false">☰</button>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="container hero-content">
+        <div>
+          <span class="tag">Welcome to my portfolio</span>
+
+          <h1>
+            Hi, I'm Himmat.<br>
+            <span class="blue">Web Developer</span><br>
+            & QA Engineer
+          </h1>
+
+          <p>
+            I build responsive websites using PHP and Laravel,
+            work with databases, test applications, and help improve
+            software quality through careful testing and debugging.
+          </p>
+
+          <div class="buttons">
+            <a href="#projects" class="btn">View My Projects</a>
+            <a href="#contact" class="btn btn-outline">Contact Me</a>
+          </div>
+        </div>
+
+        <div class="profile-card">
+          <!-- Replace HP with your profile photo if desired -->
+          <div class="profile-initials">HP</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container about-grid">
+        <div>
+          <span class="tag">About Me</span>
+          <h2 class="section-heading">Who I Am</h2>
+          <div class="about-text">
+            <p>
+              I am interested in web development and software quality
+              assurance, with a focus on building reliable and
+              user-friendly applications.
+            </p>
+            <p>
+              I enjoy solving technical problems, working with SQL,
+              testing APIs, writing test cases, and improving the
+              overall user experience.
+            </p>
+          </div>
+        </div>
+
+        <div class="info-card">
+          <p><strong>Name:</strong> Himmat Prajapati</p>
+          <p><strong>Role:</strong> Web Developer & QA Engineer</p>
+          <p><strong>Location:</strong> Ahmedabad, Gujarat</p>
+          <p><strong>GitHub:</strong>
+            <a class="project-link"
+              href="https://github.com/himmat6359"
+              target="_blank" rel="noopener noreferrer">
+              github.com/himmat6359
+            </a>
+          </p>
+          <p><strong>LinkedIn:</strong>
+            <a class="project-link"
+              href="https://linkedin.com/in/himmat-prajapati-78a00b285"
+              target="_blank" rel="noopener noreferrer">
+              View Profile
+            </a>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="soft-section" id="skills">
+      <div class="container">
+        <h2 class="section-heading">Technical Skills</h2>
+        <p class="section-intro">
+          Technologies and tools I work with.
+        </p>
+
+        <div class="skills-grid">
+          <article class="skill">
+            <h3>PHP & Laravel</h3>
+            <p>Backend development, routing, MVC and CRUD operations.</p>
+          </article>
+
+          <article class="skill">
+            <h3>HTML & CSS</h3>
+            <p>Responsive layouts and accessible web interfaces.</p>
+          </article>
+
+          <article class="skill">
+            <h3>JavaScript</h3>
+            <p>Form validation and interactive web features.</p>
+          </article>
+
+          <article class="skill">
+            <h3>MySQL & SQL</h3>
+            <p>Queries, joins, database operations and data validation.</p>
+          </article>
+
+          <article class="skill">
+            <h3>Manual Testing</h3>
+            <p>Test scenarios, test cases, regression and bug reporting.</p>
+          </article>
+
+          <article class="skill">
+            <h3>API Testing</h3>
+            <p>API requests, response validation and Postman basics.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <div class="container">
+        <h2 class="section-heading">My Projects</h2>
+        <p class="section-intro">
+          A selection of development and testing work.
+        </p>
+
+        <div class="projects-grid">
+          <article class="project">
+            <div class="project-banner">01 · Laravel</div>
+            <div class="project-body">
+              <h3>Salon Management System</h3>
+              <p>
+                A salon management application concept covering
+                appointments, billing, branches and reports.
+              </p>
+              <a class="project-link"
+                href="https://demo.acmeinfosoft.com/"
+                target="_blank" rel="noopener noreferrer">
+                View Project ↗
+              </a>
+            </div>
+          </article>
+
+          <article class="project">
+            <div class="project-banner">02 · Web</div>
+            <div class="project-body">
+              <h3>Customer Enquiry Form</h3>
+              <p>
+                A responsive customer form concept with input
+                validation and a simple user experience.
+              </p>
+              <a class="project-link" href="#contact">
+                Discuss Project ↗
+              </a>
+            </div>
+          </article>
+
+          <article class="project">
+            <div class="project-banner">03 · QA</div>
+            <div class="project-body">
+              <h3>QA Testing Practice</h3>
+              <p>
+                Test cases, bug reports, API validation and
+                database testing examples.
+              </p>
+              <a class="project-link"
+                href="https://github.com/himmat6359"
+                target="_blank" rel="noopener noreferrer">
+                View GitHub ↗
+              </a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="soft-section" id="contact">
+      <div class="container contact-grid">
+        <div>
+          <span class="tag">Get In Touch</span>
+          <h2 class="section-heading">Let's Connect</h2>
+          <p class="section-intro">
+            Have a project, job opportunity or question?
+            Send me a message.
+          </p>
+
+          <div class="contact-details">
+            <p><strong>GitHub:</strong>
+              <a class="project-link"
+                href="https://github.com/himmat6359"
+                target="_blank" rel="noopener noreferrer">
+                Visit my GitHub
+              </a>
+            </p>
+            <p><strong>LinkedIn:</strong>
+              <a class="project-link"
+                href="https://linkedin.com/in/himmat-prajapati-78a00b285"
+                target="_blank" rel="noopener noreferrer">
+                Connect with me
+              </a>
+            </p>
+          </div>
+        </div>
+
+        <form class="contact-form" id="contactForm">
+          <label for="name">Your Name</label>
+          <input id="name" name="name" type="text"
+            placeholder="Enter your name" required>
+
+          <label for="email">Your Email</label>
+          <input id="email" name="email" type="email"
+            placeholder="Enter your email" required>
+
+          <label for="message">Your Message</label>
+          <textarea id="message" name="message" rows="5"
+            placeholder="Write your message..." required></textarea>
+
+          <button class="btn" type="submit">Prepare Email</button>
+
+          <p class="form-note" id="formNote" aria-live="polite">
+            This form opens your email app. It does not store submissions.
+          </p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>© <span id="year"></span> Himmat Prajapati. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile navigation
+    const menuToggle = document.getElementById("menuToggle");
+    const navLinks = document.getElementById("navLinks");
+
+    menuToggle.addEventListener("click", function () {
+      const isOpen = navLinks.classList.toggle("open");
+      menuToggle.setAttribute("aria-expanded", String(isOpen));
+    });
+
+    navLinks.querySelectorAll("a").forEach(function (link) {
+      link.addEventListener("click", function () {
+        navLinks.classList.remove("open");
+        menuToggle.setAttribute("aria-expanded", "false");
+      });
+    });
+
+    // Automatically show current year
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
+
+    // Contact form: opens the visitor's email app.
+    // Replace this with your real email address.
+    document.getElementById("contactForm").addEventListener(
+      "submit", function (event) {
+        event.preventDefault();
+
+        const name = document.getElementById("name").value.trim();
+        const email = document.getElementById("email").value.trim();
+        const message = document.getElementById("message").value.trim();
+        const recipient = "YOUR_EMAIL@example.com";
+        const note = document.getElementById("formNote");
+
+        if (recipient === "YOUR_EMAIL@example.com") {
+          note.textContent =
+            "Please update YOUR_EMAIL@example.com in the HTML code first.";
+          return;
+        }
+
+        const subject = encodeURIComponent(
+          "Portfolio enquiry from " + name
+        );
+
+        const body = encodeURIComponent(
+          "Name: " + name +
+          "\nEmail: " + email +
+          "\n\nMessage:\n" + message
+        );
+
+        note.textContent = "Opening your email application...";
+        window.location.href =
+          "mailto:" + recipient +
+          "?subject=" + subject +
+          "&body=" + body;
+      }
+    );
+  </script>
+
+</body>
+</html>
