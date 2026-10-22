@@ -4,7 +4,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <meta name="description" content="Himmat Prajapati - Web Developer and QA Engineer Portfolio">
+
   <title>Himmat Prajapati | Web Developer & QA Engineer</title>
 
   <style>
@@ -26,8 +28,8 @@
     }
 
     a {
-      color: inherit;
       text-decoration: none;
+      color: inherit;
     }
 
     .container {
@@ -39,9 +41,9 @@
     header {
       position: sticky;
       top: 0;
-      background: white;
+      background: #fff;
       border-bottom: 1px solid #e5e7eb;
-      z-index: 10;
+      z-index: 100;
     }
 
     nav {
@@ -53,15 +55,15 @@
     }
 
     .logo {
-      font-size: 21px;
+      font-size: 22px;
       font-weight: bold;
       color: #2563eb;
     }
 
     .nav-links {
       display: flex;
-      gap: 24px;
       list-style: none;
+      gap: 24px;
     }
 
     .nav-links a:hover {
@@ -70,40 +72,40 @@
 
     .menu-toggle {
       display: none;
-      border: 1px solid #ddd;
+      padding: 7px 12px;
       background: white;
-      padding: 8px 12px;
+      border: 1px solid #ddd;
       border-radius: 6px;
       font-size: 20px;
       cursor: pointer;
     }
 
     .hero {
-      background: linear-gradient(135deg, #f8fbff, #edf3ff);
-      padding: 100px 0;
+      padding: 90px 0;
+      background: linear-gradient(135deg, #f8fbff, #eaf1ff);
     }
 
     .hero-content {
       display: grid;
-      grid-template-columns: 1.3fr 0.7fr;
-      gap: 50px;
+      grid-template-columns: 1.2fr 0.8fr;
       align-items: center;
+      gap: 55px;
     }
 
     .tag {
       display: inline-block;
       background: #dbeafe;
       color: #1d4ed8;
-      padding: 6px 12px;
+      padding: 6px 13px;
       border-radius: 20px;
       font-size: 13px;
       margin-bottom: 20px;
     }
 
     h1 {
-      font-size: clamp(36px, 5vw, 55px);
+      font-size: clamp(36px, 5vw, 54px);
       line-height: 1.2;
-      margin-bottom: 18px;
+      margin-bottom: 20px;
     }
 
     .blue {
@@ -112,8 +114,8 @@
 
     .hero p {
       color: #64748b;
-      max-width: 550px;
       margin-bottom: 25px;
+      max-width: 550px;
     }
 
     .buttons {
@@ -125,12 +127,13 @@
     .btn {
       display: inline-block;
       padding: 12px 20px;
+      border: 1px solid #2563eb;
+      border-radius: 8px;
       background: #2563eb;
       color: white;
-      border-radius: 8px;
-      border: 1px solid #2563eb;
       font-weight: bold;
       cursor: pointer;
+      font-size: 14px;
     }
 
     .btn:hover {
@@ -144,30 +147,31 @@
     }
 
     .profile-card {
-      min-height: 300px;
+      min-height: 350px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 25px;
+      border-radius: 24px;
       background: white;
       border: 1px solid #e5e7eb;
-      border-radius: 24px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 15px 40px #1720330d;
+      box-shadow: 0 15px 40px #17203312;
     }
 
-    .profile-initials {
-      width: 170px;
-      height: 170px;
-      display: grid;
-      place-items: center;
-      background: #eaf1ff;
-      color: #2563eb;
+    /* LinkedIn profile photo */
+    .profile-photo {
+      width: 250px;
+      height: 250px;
+      max-width: 100%;
       border-radius: 50%;
-      font-size: 55px;
-      font-weight: bold;
+      object-fit: cover;
+      object-position: center;
+      border: 6px solid #eaf1ff;
+      box-shadow: 0 10px 35px #2563eb20;
     }
 
     section {
-      padding: 80px 0;
+      padding: 75px 0;
     }
 
     .section-heading {
@@ -184,6 +188,7 @@
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 45px;
+      align-items: start;
     }
 
     .about-text p {
@@ -195,12 +200,11 @@
       padding: 25px;
       border: 1px solid #e5e7eb;
       border-radius: 15px;
-      background: #fff;
+      overflow-wrap: anywhere;
     }
 
     .info-card p {
       margin-bottom: 12px;
-      overflow-wrap: anywhere;
     }
 
     .soft-section {
@@ -215,9 +219,14 @@
 
     .skill {
       padding: 22px;
-      background: white;
       border: 1px solid #e5e7eb;
       border-radius: 12px;
+      background: white;
+      transition: transform 0.2s;
+    }
+
+    .skill:hover {
+      transform: translateY(-4px);
     }
 
     .skill h3 {
@@ -226,8 +235,8 @@
     }
 
     .skill p {
-      color: #64748b;
       font-size: 14px;
+      color: #64748b;
     }
 
     .projects-grid {
@@ -237,9 +246,9 @@
     }
 
     .project {
+      overflow: hidden;
       border: 1px solid #e5e7eb;
       border-radius: 15px;
-      overflow: hidden;
       background: white;
       transition: transform 0.2s, box-shadow 0.2s;
     }
@@ -255,7 +264,7 @@
       place-items: center;
       background: #eaf1ff;
       color: #2563eb;
-      font-size: 24px;
+      font-size: 23px;
       font-weight: bold;
     }
 
@@ -264,13 +273,12 @@
     }
 
     .project-body p {
+      margin: 12px 0;
       color: #64748b;
       font-size: 14px;
-      margin: 12px 0;
     }
 
     .project-link {
-      display: inline-block;
       color: #2563eb;
       font-weight: bold;
       font-size: 14px;
@@ -297,8 +305,8 @@
     .contact-form label {
       display: block;
       margin: 12px 0 6px;
-      font-weight: bold;
       font-size: 14px;
+      font-weight: bold;
     }
 
     .contact-form input,
@@ -345,12 +353,8 @@
         grid-template-columns: repeat(2, 1fr);
       }
 
-      .hero {
-        padding: 65px 0;
-      }
-
       .profile-card {
-        min-height: 220px;
+        min-height: 300px;
       }
     }
 
@@ -380,13 +384,22 @@
         padding: 10px 0;
       }
 
+      .hero {
+        padding: 60px 0;
+      }
+
+      .profile-photo {
+        width: 210px;
+        height: 210px;
+      }
+
       .skills-grid,
       .projects-grid {
         grid-template-columns: 1fr;
       }
 
       section {
-        padding: 60px 0;
+        padding: 55px 0;
       }
 
       .section-heading {
@@ -398,12 +411,18 @@
 
 <body>
 
+  <!-- Navigation -->
   <header>
     <nav class="container">
-      <a class="logo" href="#home">HP.</a>
+      <a href="#home" class="logo">HP.</a>
 
-      <button class="menu-toggle" id="menuToggle"
-        aria-label="Toggle navigation" aria-expanded="false">☰</button>
+      <button
+        class="menu-toggle"
+        id="menuToggle"
+        aria-label="Toggle navigation"
+        aria-expanded="false">
+        ☰
+      </button>
 
       <ul class="nav-links" id="navLinks">
         <li><a href="#home">Home</a></li>
@@ -416,8 +435,11 @@
   </header>
 
   <main>
+
+    <!-- Home -->
     <section class="hero" id="home">
       <div class="container hero-content">
+
         <div>
           <span class="tag">Welcome to my portfolio</span>
 
@@ -440,23 +462,37 @@
         </div>
 
         <div class="profile-card">
-          <!-- Replace HP with your profile photo if desired -->
-          <div class="profile-initials">HP</div>
+          <img
+            class="profile-photo"
+            src="https://media.licdn.com/dms/image/v2/D4D03AQGmn6PR1gXANg/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1721065298897?e=2147483647&amp;v=beta&amp;t=H8KJRRbEaZTJEJ2mowbUVLRAk4o9nI7iD4FCP3TJGAU"
+            alt="Himmat Prajapati profile photo"
+            width="250"
+            height="250"
+            onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';">
+
+          <div class="profile-fallback" style="display:none; width:250px; height:250px; border-radius:50%; background:#eaf1ff; color:#2563eb; place-items:center; font-size:55px; font-weight:bold;">
+            HP
+          </div>
         </div>
+
       </div>
     </section>
 
+    <!-- About -->
     <section id="about">
       <div class="container about-grid">
+
         <div>
           <span class="tag">About Me</span>
           <h2 class="section-heading">Who I Am</h2>
+
           <div class="about-text">
             <p>
               I am interested in web development and software quality
               assurance, with a focus on building reliable and
               user-friendly applications.
             </p>
+
             <p>
               I enjoy solving technical problems, working with SQL,
               testing APIs, writing test cases, and improving the
@@ -469,84 +505,102 @@
           <p><strong>Name:</strong> Himmat Prajapati</p>
           <p><strong>Role:</strong> Web Developer & QA Engineer</p>
           <p><strong>Location:</strong> Ahmedabad, Gujarat</p>
-          <p><strong>GitHub:</strong>
+
+          <p>
+            <strong>GitHub:</strong>
             <a class="project-link"
-              href="https://github.com/himmat6359"
-              target="_blank" rel="noopener noreferrer">
-              github.com/himmat6359
+               href="https://github.com/himmat6359"
+               target="_blank"
+               rel="noopener noreferrer">
+              Visit GitHub
             </a>
           </p>
-          <p><strong>LinkedIn:</strong>
+
+          <p>
+            <strong>LinkedIn:</strong>
             <a class="project-link"
-              href="https://linkedin.com/in/himmat-prajapati-78a00b285"
-              target="_blank" rel="noopener noreferrer">
-              View Profile
+               href="https://linkedin.com/in/himmat-prajapati-78a00b285"
+               target="_blank"
+               rel="noopener noreferrer">
+              View LinkedIn Profile
             </a>
           </p>
         </div>
+
       </div>
     </section>
 
+    <!-- Skills -->
     <section class="soft-section" id="skills">
       <div class="container">
+
         <h2 class="section-heading">Technical Skills</h2>
         <p class="section-intro">
           Technologies and tools I work with.
         </p>
 
         <div class="skills-grid">
+
           <article class="skill">
             <h3>PHP & Laravel</h3>
-            <p>Backend development, routing, MVC and CRUD operations.</p>
+            <p>Backend development, MVC, routing and CRUD operations.</p>
           </article>
 
           <article class="skill">
             <h3>HTML & CSS</h3>
-            <p>Responsive layouts and accessible web interfaces.</p>
+            <p>Responsive layouts and user-friendly web interfaces.</p>
           </article>
 
           <article class="skill">
             <h3>JavaScript</h3>
-            <p>Form validation and interactive web features.</p>
+            <p>Interactive components and form validation.</p>
           </article>
 
           <article class="skill">
             <h3>MySQL & SQL</h3>
-            <p>Queries, joins, database operations and data validation.</p>
+            <p>Queries, joins, database operations and validation.</p>
           </article>
 
           <article class="skill">
             <h3>Manual Testing</h3>
-            <p>Test scenarios, test cases, regression and bug reporting.</p>
+            <p>Test cases, regression testing and bug reporting.</p>
           </article>
 
           <article class="skill">
             <h3>API Testing</h3>
-            <p>API requests, response validation and Postman basics.</p>
+            <p>API requests, response validation and Postman.</p>
           </article>
+
         </div>
       </div>
     </section>
 
+    <!-- Projects -->
     <section id="projects">
       <div class="container">
+
         <h2 class="section-heading">My Projects</h2>
         <p class="section-intro">
-          A selection of development and testing work.
+          A selection of my development and testing work.
         </p>
 
         <div class="projects-grid">
+
           <article class="project">
             <div class="project-banner">01 · Laravel</div>
+
             <div class="project-body">
               <h3>Salon Management System</h3>
+
               <p>
-                A salon management application concept covering
-                appointments, billing, branches and reports.
+                A salon management application covering appointments,
+                billing, branch operations and reports.
               </p>
+
               <a class="project-link"
-                href="https://demo.acmeinfosoft.com/"
-                target="_blank" rel="noopener noreferrer">
+                 href="https://demo.acmeinfosoft.com/"
+                 target="_blank"
+                 rel="noopener noreferrer">
                 View Project ↗
               </a>
             </div>
@@ -554,59 +608,78 @@
 
           <article class="project">
             <div class="project-banner">02 · Web</div>
+
             <div class="project-body">
               <h3>Customer Enquiry Form</h3>
+
               <p>
-                A responsive customer form concept with input
-                validation and a simple user experience.
+                A responsive form concept for collecting customer
+                details with a simple user experience.
               </p>
-              <a class="project-link" href="#contact">
-                Discuss Project ↗
+
+              <a class="project-link"
+                 href="https://github.com/himmat6359"
+                 target="_blank"
+                 rel="noopener noreferrer">
+                View GitHub ↗
               </a>
             </div>
           </article>
 
           <article class="project">
             <div class="project-banner">03 · QA</div>
+
             <div class="project-body">
               <h3>QA Testing Practice</h3>
+
               <p>
                 Test cases, bug reports, API validation and
                 database testing examples.
               </p>
+
               <a class="project-link"
-                href="https://github.com/himmat6359"
-                target="_blank" rel="noopener noreferrer">
+                 href="https://github.com/himmat6359"
+                 target="_blank"
+                 rel="noopener noreferrer">
                 View GitHub ↗
               </a>
             </div>
           </article>
+
         </div>
       </div>
     </section>
 
+    <!-- Contact -->
     <section class="soft-section" id="contact">
       <div class="container contact-grid">
+
         <div>
           <span class="tag">Get In Touch</span>
           <h2 class="section-heading">Let's Connect</h2>
+
           <p class="section-intro">
             Have a project, job opportunity or question?
             Send me a message.
           </p>
 
           <div class="contact-details">
-            <p><strong>GitHub:</strong>
+            <p>
+              <strong>GitHub:</strong>
               <a class="project-link"
-                href="https://github.com/himmat6359"
-                target="_blank" rel="noopener noreferrer">
+                 href="https://github.com/himmat6359"
+                 target="_blank"
+                 rel="noopener noreferrer">
                 Visit my GitHub
               </a>
             </p>
-            <p><strong>LinkedIn:</strong>
+
+            <p>
+              <strong>LinkedIn:</strong>
               <a class="project-link"
-                href="https://linkedin.com/in/himmat-prajapati-78a00b285"
-                target="_blank" rel="noopener noreferrer">
+                 href="https://linkedin.com/in/himmat-prajapati-78a00b285"
+                 target="_blank"
+                 rel="noopener noreferrer">
                 Connect with me
               </a>
             </p>
@@ -614,31 +687,48 @@
         </div>
 
         <form class="contact-form" id="contactForm">
+
           <label for="name">Your Name</label>
-          <input id="name" name="name" type="text"
-            placeholder="Enter your name" required>
+          <input
+            id="name"
+            name="name"
+            type="text"
+            placeholder="Enter your name"
+            required>
 
           <label for="email">Your Email</label>
-          <input id="email" name="email" type="email"
-            placeholder="Enter your email" required>
+          <input
+            id="email"
+            name="email"
+            type="email"
+            placeholder="Enter your email"
+            required>
 
           <label for="message">Your Message</label>
-          <textarea id="message" name="message" rows="5"
-            placeholder="Write your message..." required></textarea>
+          <textarea
+            id="message"
+            name="message"
+            rows="5"
+            placeholder="Write your message..."
+            required></textarea>
 
           <button class="btn" type="submit">Prepare Email</button>
 
           <p class="form-note" id="formNote" aria-live="polite">
             This form opens your email app. It does not store submissions.
           </p>
+
         </form>
       </div>
     </section>
+
   </main>
 
   <footer>
     <div class="container">
-      <p>© <span id="year"></span> Himmat Prajapati. All rights reserved.</p>
+      <p>
+        © <span id="year"></span> Himmat Prajapati. All rights reserved.
+      </p>
     </div>
   </footer>
 
@@ -659,14 +749,15 @@
       });
     });
 
-    // Automatically show current year
+    // Current year
     document.getElementById("year").textContent =
       new Date().getFullYear();
 
-    // Contact form: opens the visitor's email app.
-    // Replace this with your real email address.
+    // Contact form
+    // Replace this with your own contact email.
     document.getElementById("contactForm").addEventListener(
-      "submit", function (event) {
+      "submit",
+      function (event) {
         event.preventDefault();
 
         const name = document.getElementById("name").value.trim();
@@ -677,7 +768,7 @@
 
         if (recipient === "YOUR_EMAIL@example.com") {
           note.textContent =
-            "Please update YOUR_EMAIL@example.com in the HTML code first.";
+            "Please add your contact email in the HTML code first.";
           return;
         }
 
@@ -692,6 +783,7 @@
         );
 
         note.textContent = "Opening your email application...";
+
         window.location.href =
           "mailto:" + recipient +
           "?subject=" + subject +
